@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Test Data Produced</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding: 2rem;
+            background-color: #333;
+            color: whitesmoke;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            font-size: 2rem;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        input, button {
+            font-size: 2rem;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        p.results{
+            color : #89cbd9;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1>Test Data Produced</h1>
+    <p class=results>{{results}} </p>
+
+    <form action="/test" method = 'POST' enctype='multipart/form-data'>
+        {{ form.hidden_tag() }}  <!-- Renders the hidden CSRF token field -->
+         <!-- Label for the name field -->
+        {{ form.file() }}      <!-- Input for the name field -->
+        
+        {{ form.submit() }}    <!-- Submit button -->
+    </form>
+</body>
+
+</html>

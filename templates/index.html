@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Test Data Generator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+        <style>
+            .format{
+                justify-content:space-evenly;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .lato-regular {
+                font-family: "Lato", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+            body {
+                padding: 2rem;
+                background-color: #333;
+                color: whitesmoke;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                font-size: 2rem;
+                font-family: "Lato", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+            
+            input, button {
+                font-size: 2rem;
+                padding: 1rem;
+                border-radius: 10px;
+            }
+            pre {
+                font-size:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Get Test Data</h1>
+        <div class = "format">
+        <h2>Format</h2>
+        <img src="templates/images/jsonex.jpg"/>
+          <div>
+        <form action="/test" method = 'POST' enctype='multipart/form-data'>
+            {{ form.hidden_tag() }}  <!-- Renders the hidden CSRF token field -->
+             <!-- Label for the name field -->
+            {{ form.file() }}      <!-- Input for the name field -->
+            
+            {{ form.submit() }}    <!-- Submit button -->
+        </form>
+    </body>
+</html>
