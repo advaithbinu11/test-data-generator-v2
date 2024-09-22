@@ -1,0 +1,1 @@
+This will "catch" files for proccessing. Create a python venv with python -m venv myenv and activate with source myenv/bin/activate and paste these files in.
